@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PacienteService } from './shared';
+import { PacienteService, NomePacienteDirective } from './shared';
 import { ListarPacienteComponent } from './listar';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,8 @@ import { EditarPacienteComponent } from './editar';
   declarations: [
     ListarPacienteComponent,
     CadastrarPacientesComponent,
-    EditarPacienteComponent
+    EditarPacienteComponent,
+    NomePacienteDirective
   ],
   imports: [
     CommonModule,

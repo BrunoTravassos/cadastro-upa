@@ -18,7 +18,7 @@
   <tbody>
     <tr *ngFor='let paciente of pacientes'>
         <ng-template [ngIf]='paciente.status == true'>
-          <td  [class.success]="!paciente.status">
+          <td [nomePaciente]="paciente.nome" [class.success]="!paciente.status">
             {{ paciente.nome }}
           </td>
           <td >
