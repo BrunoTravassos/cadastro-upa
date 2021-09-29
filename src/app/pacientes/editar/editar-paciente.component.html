@@ -1,5 +1,5 @@
 <main class="container">
-  <form #formPaciente="ngForm" method="POST" class="form needs-validation mt-5 mb-5">
+  <form #formPaciente="ngForm" method="POST" class="form needs-validation mt-5 mb-5 form_cadastro">
     <fieldset>
       <legend class="text-center display-4">Editar Pacientes</legend>
 
@@ -37,7 +37,7 @@
       </div>
 
       <div class="row mt-5">
-        <div class="form-group col-9">
+        <div class="form-group col-8">
           <div class="input-group">
             <div class="input-group-prepend">
               <div class="input-group-text">* Endereço</div>
@@ -46,14 +46,21 @@
               [(ngModel)]="paciente.endereco">
           </div>
         </div>
-        <div class="form-group col-3">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text">* Prioridade</div>
-            </div>
-            <input type="text" class="form-control " name="tipoPrioridade" id="tipoPrioridade"
-              placeholder="Tipo de Prioridade" [(ngModel)]="paciente.tipoPrioridade">
+        <div class="form-group input-group mb-3 col-4">
+
+          <div class="form-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">* Prioridade</label>
           </div>
+
+          <select name="tipoPrioridade" class="custom-select mb-3" [(ngModel)]="paciente.tipoPrioridade">
+
+            <option value="Nao Urgente" style="color: blue;">Não Urgente</option>
+            <option value="Pouco Urgente" style="color: green;">Pouco Urgente</option>
+            <option value="Urgente" style="color: yellow;">Urgente</option>
+            <option value="Muito Urgente" style="color: orange;">Muito Urgente</option>
+            <option value="Emergencia" style="color: red;">Emergência</option>
+          </select>
+
         </div>
       </div>
       <div class="row mt-5">
