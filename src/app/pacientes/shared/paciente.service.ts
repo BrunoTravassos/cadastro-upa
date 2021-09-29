@@ -14,6 +14,7 @@ export class PacienteService {
   cadastrar(paciente: Paciente): void{
     const pacientes = this.listarTodos();
     paciente.id = new Date().getTime();
+    paciente.status = true;
     pacientes.push(paciente);
     localStorage['pacientes'] = JSON.stringify(pacientes);
   }

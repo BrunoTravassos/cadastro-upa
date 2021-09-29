@@ -13,10 +13,7 @@ export class ListarPacienteComponent implements OnInit {
 
   ngOnInit() {
     this.pacientes = this.listarTodos();
-    this.pacientes = [
-      new Paciente(1, 'Teste 01', '32432','rua teste', 'min',true),
-      new Paciente(2, 'Teste 02', '32432', 'rua teste', 'min', false )
-    ]
+    
   }
 
   listarTodos(): Paciente[]{
