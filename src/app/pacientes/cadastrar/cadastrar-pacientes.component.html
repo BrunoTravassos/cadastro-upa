@@ -1,19 +1,19 @@
 <main class="container">
-  <form #formPaciente="ngForm" method="POST" class="form needs-validation mt-5 mb-5">
+  <form #formPaciente="ngForm" method="POST" class="form needs-validation mt-5 mb-5 form_cadastro">
     <fieldset>
       <legend class="text-center display-4">Cadastro de Pacientes</legend>
 
-      <small id="asterisco" class="form-text text-muted mb-4">Os campos marcados com asterisco * são de preenchimento
+      <small id="asterisco" class=" form-text text-muted  mt-5 mb-4">Os campos marcados com asterisco * são de preenchimento
         obrigatório.</small>
 
-      <div class="row mt-5">
+      <div class="row mt-5 ">
         <div class="form-group col-8">
           <div class="input-group">
             <div class="input-group-prepend">
               <div class="input-group-text">* Nome Paciente</div>
             </div>
-            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Paciente"
-              #nome="ngModel" [(ngModel)]="paciente.nome" minlength="3">
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Paciente" #nome="ngModel"
+              [(ngModel)]="paciente.nome" minlength="3">
             <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
               <div [hidden]="!nome.errors.required">
                 Digite um Nome.
@@ -37,7 +37,7 @@
       </div>
 
       <div class="row mt-5">
-        <div class="form-group col-9">
+        <div class="form-group col-8">
           <div class="input-group">
             <div class="input-group-prepend">
               <div class="input-group-text">* Endereço</div>
@@ -45,20 +45,33 @@
             <input type="text" class="form-control " name="endereco" id="endereco" placeholder="Endereço do Paciente"
               [(ngModel)]="paciente.endereco">
           </div>
+
+
         </div>
-        <div class="form-group col-3">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text">* Prioridade</div>
-            </div>
-            <input type="text" class="form-control " name="tipoPrioridade" id="tipoPrioridade" placeholder="Tipo de Prioridade"
-              [(ngModel)]="paciente.tipoPrioridade">
-            </div>
+
+        <div class="form-group input-group mb-3 col-4">
+
+          <div class="form-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">* Prioridade</label>
+          </div>
+
+          <select name="tipoPrioridade" class="custom-select mb-3" [(ngModel)]="paciente.tipoPrioridade">
+
+            <option value="Nao Urgente" style="color: blue;">Não Urgente</option>
+            <option value="Pouco Urgente" style="color: green;">Pouco Urgente</option>
+            <option value="Urgente" style="color: yellow;">Urgente</option>
+            <option value="Muito Urgente" style="color: orange;">Muito Urgente</option>
+            <option value="Emergencia" style="color: red;">Emergência</option>
+          </select>
+
         </div>
       </div>
+
+
+
       <div class="row mt-5">
         <div class="col-6 d-flex justify-content-start">
-          <button class="bg-success" type="submit" (click)="cadastrar()" value="Cadastrar"
+          <button class="bg-success pr-5 pl-5" type="submit" (click)="cadastrar()" value="Cadastrar"
             [disabled]="!formPaciente.form.valid">Enviar</button>
         </div>
 
