@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PacienteService } from '.';
-import { ListarPacienteComponent } from './listar/listar-paciente.component';
+import { PacienteService } from './shared';
+import { ListarPacienteComponent } from './listar';
 
 
 
