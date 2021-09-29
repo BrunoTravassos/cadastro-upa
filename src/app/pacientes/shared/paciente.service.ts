@@ -36,8 +36,13 @@ export class PacienteService {
 
   remover(id: number): void{
     let pacientes: Paciente[] = this.listarTodos();
-    pacientes = pacientes.filter(pacientes => pacientes.id !== id);
-    localStorage['pacientes'] =JSON.stringify(pacientes)
+    pacientes.forEach((obj, index, objs) => {
+      if (id === obj.id) {
+        obj.status=false
+        objs[index].status = obj.status;
+      }
+    });
+    localStorage['pacientes'] = JSON.stringify(pacientes);
   }
 
   alterarStatus(id: number): void{
