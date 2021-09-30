@@ -15,6 +15,7 @@ export class PacienteService {
     const pacientes = this.listarTodos();
     paciente.id = new Date().getTime();
     paciente.status = true;
+    paciente.atendimento = true;
     pacientes.push(paciente);
     localStorage['pacientes'] = JSON.stringify(pacientes);
   }
@@ -49,7 +50,7 @@ export class PacienteService {
     const pacientes: Paciente[] = this.listarTodos();
     pacientes.forEach((obj, index, objs) => {
       if (id === obj.id) {
-        objs[index].status = !obj.status;
+        objs[index].atendimento = !obj.atendimento;
       }
     });
     localStorage['pacientes'] = JSON.stringify(pacientes);

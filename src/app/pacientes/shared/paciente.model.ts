@@ -5,7 +5,9 @@ export class Paciente {
     public cpf?: string,
     public endereco?: string,
     public tipoPrioridade?: string,
-    public status?: boolean
+    public status?: boolean,
+    public atendimento?: boolean
+
   ) {
 
   }

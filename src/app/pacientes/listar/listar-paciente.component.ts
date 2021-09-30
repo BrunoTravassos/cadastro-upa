@@ -21,7 +21,7 @@ export class ListarPacienteComponent implements OnInit {
   }
 
   alterarStatus(paciente: Paciente): void {
-    if (confirm('Deseja alterar o status do Paciente "' + paciente.nome + '"?')) {
+    if (confirm('Deseja alterar o status de atendimento do Paciente "' + paciente.nome + '"?')) {
       this.pacienteService.alterarStatus(paciente.id);
       this.pacientes = this.listarTodos();
     } else {

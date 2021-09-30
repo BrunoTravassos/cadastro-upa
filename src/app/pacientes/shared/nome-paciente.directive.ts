@@ -5,7 +5,7 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 })
 export class NomePacienteDirective implements OnInit {
 
-  @Input() nomePaciente: string;
+  @Input() nomePaciente: boolean;
 
   constructor(private el: ElementRef) { }
 
